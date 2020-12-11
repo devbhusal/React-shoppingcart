@@ -1,0 +1,26 @@
+.card1:hover {
+  transform: scale(1.02);
+}
+
+.card2:hover {
+  transform: scale(1.005);
+
+  border-color: rgba(1, 1, 20, 0.322);
+}
+
+.color-nav {
+  background-color: rgb(4, 36, 63);
+  height: 50px;
+}
+
+.color-nav2 {
+  background-color: rgb(125, 107, 167);
+}
+
+.shop-background {
+  background-color: rgb(187, 196, 204);
+}
+
+.navbar2-height {
+  max-height: 30px;
+}

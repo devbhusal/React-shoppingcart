@@ -1,23 +1,41 @@
-import React from "react";
+import React,{useContext} from "react";
 import ItemCounter from "./ItemCounter.jsx";
+import  {MainDataContext} from "../MainDataContext";
 
-const ShoppingCart = (props) => {
+const ShoppingCart = () => {
+const [state,setState]=useContext(MainDataContext);
+
   return (
-    <React.Fragment>
-      {props.items.length === 0 ? (
+    <React.Fragment >
+
+
+
+      {state.items.length === 0 ? (
         <h3> ShoppingCart is empty </h3>
       ) : (
         <>
-          {props.items.map((item) => (
-            <p>
+        <div className="row  " style={{marginLeft:"2%", marginTop:"50px" }}>
+          <div className="column col-md ">
+         <div className=" cards" >
+          {state.items.map((item,key) => (
+            
               <ItemCounter
                 item={item}
-                handledelete={props.handledelete}
-                increasequantity={props.increasequantity}
-                decreasequantity={props.decreasequantity}
+                key={key}
+                
               />
-            </p>
+            
           ))}
+          </div></div>
+<div className="column col-sm " style={{display: 'flex', justifyContent: 'flex-end'}} >
+  <div className="card shadow p-3  bg-light rounded" style={{position:"sticky",top:50,height:250,width:250}}   >
+  <h6>Total  Cost: ${parseFloat(state.items.reduce((a, b) => a + b.Quantity * b.Cost, 0)).toFixed(2)}</h6> 
+  <button className="btn btn-primary">Checkout</button></div>
+
+ 
+</div>
+
+          </div>
         </>
       )}
     </React.Fragment>

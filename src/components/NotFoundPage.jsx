@@ -1,15 +1,13 @@
-import React, { Component } from "react";
-import A from "./A.jsx";
-class NotFoundPage extends Component {
-  state = {};
-  render() {
+import React from "react";
+//import AwesomeButton from './AwesomeButton';
+const NotFoundPage=()=> {
+  
     return (
       <>
-        <h1>Page not found</h1>
-        
+        <h2 style ={{color:'grey'}}>We looked everywhere but  couldn`t find the page you were looking for.</h2>
+        <h3 style ={{color:'green'}}>Try not to hate us</h3>
       </>
     );
   }
-}
 
 export default NotFoundPage;

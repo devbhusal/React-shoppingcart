@@ -13,6 +13,11 @@
   }
 }
 
+.thumbnail:hover {
+  background-color: red;
+  opacity: 0.5;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
